@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+    <title>chatbox</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -14,15 +14,27 @@
     </style>
   </head>
   <body>
+    <H4 id="caption">Type your user name and press Enter</H4>
+    <div>
+      <label for="userName">User name: </label>
+      <input id="userName" type="text" size="30"/>
+<!--       <div id="feedback" /> -->
+      <br>
+      <label for="users">Online users: </label>
+      <select id="users"></select> (You can select user to send private message)
+    </div>
+    <div>
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
+    </div>
     
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-      var socket = io();
+      /*
+var socket = io();
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
@@ -31,6 +43,8 @@
       socket.on('chat message', function(msg){
         $('#messages').append($('<li>').text(msg));
       });
+      */
     </script>
+    <script src="../js/chatbox.js"></script>
   </body>
 </html>
