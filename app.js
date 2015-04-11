@@ -3,8 +3,8 @@ var http = require('http');
 var socketio = require('socket.io');
 
 var app = express();
-var server = app.listen(3000, function(){
-  console.log("Express server listening on port " + app.get('port'));
+var server = app.listen(8080, function(){
+  console.log("Express server listening on port 8080");
 });
 var io = socketio.listen(server);
 require('./config')(app, io);
